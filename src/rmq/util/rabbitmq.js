@@ -1,5 +1,5 @@
 import { connect as rabbitmqConnect } from 'amqplib';
-import config from '../../config/environment';
+import config from '../../config';
 
 async function createRabbitMQConnection() {
   const conn = await rabbitmqConnect(config.rabbitmqAddress);
