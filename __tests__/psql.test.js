@@ -20,5 +20,5 @@ describe('psql tests', () =>{
     const surveys = await db.getSurveys();
     expect(surveys.length).toBe(1);
   });
-  
+
 });

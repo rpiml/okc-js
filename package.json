@@ -6,7 +6,7 @@
   "engines": {
     "node": ">= 6.2"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/src/index.js",
   "devDependencies": {
     "babel-cli": "~6.18.0",
     "babel-core": "~6.20.0",
@@ -35,8 +35,8 @@
     "test": "npm run test-only",
     "test-only": "jest --coverage",
     "test:watch": "jest --watch",
-    "build": "babel src/**/*.js -d dist",
-    "build:watch": "babel --watch src/**/*.js -d dist"
+    "build": "babel src/*.js src/**/*.js src/**/**/*.js -d dist",
+    "build:watch": "babel --watch src/**/*.js src/**/**/*.js -d dist"
   },
   "author": "Severin Ibarluzea",
   "license": "MIT",
@@ -49,9 +49,16 @@
   },
   "homepage": "",
   "jest": {
+    "verbose": true,
     "testEnvironment": "node",
+    "automock": false,
     "moduleFileExtensions": [
-      "js"
+      "js",
+      "json"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
     ],
     "coverageDirectory": "coverage",
     "collectCoverageFrom": [
@@ -59,6 +66,7 @@
     ]
   },
   "dependencies": {
+    "amqplib": "^0.5.1",
     "amqplib-rpc": "^2.0.3",
     "babel-runtime": "~6.20.0",
     "node-uuid": "^1.4.7",
