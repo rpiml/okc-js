@@ -27,7 +27,8 @@ export function rpcReply(queue: string, reply: (x: string) => Promise<string>) {
         const content = msg.content.toString();
         const response = await reply(content);
         ch.sendToQueue(msg.properties.replyTo,
-              new Buffer(response));
+              new Buffer(response),
+             { correlationId: msg.properties.correlationId });
         ch.ack(msg);
       });
     });
