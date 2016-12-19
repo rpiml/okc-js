@@ -114,7 +114,7 @@ rmq.fullpredict(filledUserSurvey).then(result => {
 });
 ```
 
-### rpc(queue:string, message:string): Promise<string>
+### rpc(queue:string, message:?string): Promise<string>
 
 Remote procedure call on Rabbitmq
 
