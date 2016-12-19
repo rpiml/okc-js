@@ -1,6 +1,6 @@
 {
-  "name": "okc-js",
-  "version": "0.0.0",
+  "name": "@seveibar/okc-js",
+  "version": "0.0.1",
   "description": "OkCollege Javascript Utilities",
   "engineStrict": true,
   "engines": {
