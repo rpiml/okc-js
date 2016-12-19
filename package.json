@@ -1,6 +1,6 @@
 {
   "name": "@seveibar/okc-js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "OkCollege Javascript Utilities",
   "engineStrict": true,
   "engines": {
@@ -42,7 +42,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/rpiml/okc-js"
   },
   "bugs": {
     "url": ""
