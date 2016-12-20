@@ -6,7 +6,7 @@ import amqplib from 'amqplib/callback_api';
 import { getRabbitMQConnection } from './rabbitmq';
 import config from '../../config';
 
-export async function rpc(queue: string, message: string): Promise<string> {
+export async function rpc(queue: string, message: ?string): Promise<string> {
   const rabbitmq = await getRabbitMQConnection();
   const reply = (await request(rabbitmq, queue, message)).content.toString();
   rabbitmq.close();
