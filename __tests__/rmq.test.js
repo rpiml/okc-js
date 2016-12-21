@@ -17,4 +17,12 @@ describe('rabbitmq tests', () => {
       expect(await rpc(`queue${i % 10}`, 'a')).toEqual(`queue${i % 10}-response a`);
     }
   });
+  it('should allow for long running rpc calls', async () => {
+    rpcReply('long-wait', () => new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('done');
+      }, 2000);
+    }));
+    expect(await rpc('long-wait', '')).toEqual('done');
+  });
 });
